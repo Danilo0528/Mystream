@@ -61,7 +61,7 @@ ffmpeg -stream_loop -1 \
       -re -analyzeduration 100M -probesize 100M \
       -i "http://localhost:$SERVER_PORT/video.mp4" \
       -s 720x404 -r 22 \
-      -c:v libx264 -preset ultrafast -b:v 900k -maxrate 1000k -bufsize 3200k -g 44 \
+      -c:v libx264 -preset ultrafast -b:v 900k -maxrate 700k -bufsize 3200k -g 44 \
       -c:a aac -b:a 128k -ar 44100 \
       -f flv "rtmp://a.rtmp.youtube.com/live2/$YOUTUBE_KEY"
 
