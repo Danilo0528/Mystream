@@ -2,7 +2,12 @@
 
 # Configuración de variables
 VIDEO_FILE="${VIDEO_FILE:-rickroll.mp4}"
-YOUTUBE_KEY="${YOUTUBE_KEY:-your-youtube-code}"
+YOUTUBE_KEY="${YOUTUBE_KEY:-#!/bin/bash
+
+echo "YOUTUBE_KEY=$YOUTUBE_KEY"
+echo "VIDEO_FILE=$VIDEO_FILE"
+echo "SERVER_PORT=$SERVER_PORT"
+# ...código existente...-youtube-code}"
 SERVER_PORT="${PORT:-8080}"
 
 # Instalar dependencias necesarias
