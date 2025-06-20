@@ -42,11 +42,11 @@ service nginx start
 #    -c:a aac -b:a 160k -ar 44100 \
 #    -f flv "rtmp://a.rtmp.youtube.com/live2/$YOUTUBE_KEY"
 
-# ffmpeg -stream_loop -1 \
-#     -re -i "http://localhost:$SERVER_PORT/video.mp4" \
-#     -c:v libx264 -preset ultrafast -maxrate 600k -bufsize 6000k -g 50 \
-#     -c:a aac -b:a 128k -ar 44100 \
-#     -f flv "rtmp://a.rtmp.youtube.com/live2/$YOUTUBE_KEY"
+ ffmpeg -stream_loop -1 \
+     -re -i "http://localhost:$SERVER_PORT/video.mp4" \
+     -c:v libx264 -preset ultrafast -maxrate 600k -bufsize 6000k -g 50 \
+     -c:a aac -b:a 128k -ar 44100 \
+     -f flv "rtmp://a.rtmp.youtube.com/live2/$YOUTUBE_KEY"
 
 # ffmpeg -stream_loop -1 \
 #     -re -analyzeduration 200M -probesize 200M \
@@ -57,12 +57,12 @@ service nginx start
 #     -f flv "rtmp://a.rtmp.youtube.com/live2/$YOUTUBE_KEY"
 
 
-ffmpeg -stream_loop -1 \
-  -re -i "http://localhost:$SERVER_PORT/video.mp4" \
-  -s 640x360 -r 20 \
-  -c:v libx264 -preset ultrafast -tune zerolatency -b:v 700k -maxrate 700k -bufsize 2800k -g 40 \
-  -c:a aac -b:a 128k -ar 44100 \
-  -f flv "rtmp://a.rtmp.youtube.com/live2/$YOUTUBE_KEY"
+#ffmpeg -stream_loop -1 \
+#  -re -i "http://localhost:$SERVER_PORT/video.mp4" \
+#  -s 640x360 -r 20 \
+#  -c:v libx264 -preset ultrafast -tune zerolatency -b:v 700k -maxrate 700k -bufsize 2800k -g 40 \
+#  -c:a aac -b:a 128k -ar 44100 \
+#  -f flv "rtmp://a.rtmp.youtube.com/live2/$YOUTUBE_KEY"
 
 
 
