@@ -58,12 +58,12 @@ service nginx start
 
 
 ffmpeg -stream_loop -1 \
-  -re -analyzeduration 100M -probesize 100M \
-  -i "http://localhost:$SERVER_PORT/video.mp4" \
-  -s 854x480 -r 24 \
-  -c:v libx264 -preset ultrafast -b:v 600k -maxrate 1000k -bufsize 4000k -g 48 \
-  -c:a aac -b:a 128k -ar 44100 \
-  -f flv "rtmp://a.rtmp.youtube.com/live2/$YOUTUBE_KEY"
+      -re -analyzeduration 100M -probesize 100M \
+      -i "http://localhost:$SERVER_PORT/video.mp4" \
+      -s 720x404 -r 22 \
+      -c:v libx264 -preset ultrafast -b:v 900k -maxrate 1000k -bufsize 3200k -g 44 \
+      -c:a aac -b:a 128k -ar 44100 \
+      -f flv "rtmp://a.rtmp.youtube.com/live2/$YOUTUBE_KEY"
 
 
 
